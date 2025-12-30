@@ -19,7 +19,7 @@ public class KVClientService {
 
     public KVClientResponse fetchKeyValue(KVClientGetRequest request){
         return restTemplate.postForObject(
-                "http://localhost:8081/kv",
+                "http://kvcoordinator:8081/kv",
                 request,
                 KVClientResponse.class
         );
@@ -27,7 +27,7 @@ public class KVClientService {
 
     public KVClientResponse updateKeyValue(KVClientPutRequest request){
         ResponseEntity<KVClientResponse> response = restTemplate.exchange(
-                "http://localhost:8081/kv",
+                "http://kvcoordinator:8081/kv",
                 HttpMethod.PUT,
                 new HttpEntity<>(request),
                 KVClientResponse.class
