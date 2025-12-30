@@ -20,11 +20,11 @@ public class KVClientController {
 
     @PostMapping("/kv")
     public KVClientResponse getKeyValue(@RequestBody KVClientGetRequest request){
-        return KVClientMapper.toResponse(service.fetchKeyValue(request));
+        return service.fetchKeyValue(request);
     }
 
     @PutMapping("/kv")
     public KVClientResponse putKeyValue(@RequestBody KVClientPutRequest request){
-        return KVClientMapper.toResponse(service.updateKeyValue(request));
+        return service.updateKeyValue(request);
     }
 }
